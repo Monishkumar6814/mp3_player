@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Screen Music Player</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="music-player">
+    <div class="header">
+      <h1 class="title">Music Player</h1>
+      <button id="folder-btn">Choose Folder</button>
+      <input type="file" id="folder-selector" webkitdirectory style="display: none;">
+    </div>
+
+    <div class="album-display">
+      <div class="album-thumbnail" id="album-thumbnail">
+        <img id="album-image" src="" alt="Album Cover">
+      </div>
+
+      <div class="timeline">
+        <span id="start-time" style="margin-left: 10px;">0:00</span>
+        <input type="range" id="timeline" min="0" max="100" value="0">
+        <span id="end-time">0:00</span>
+      </div>
+    </div>
+
+    <div id="song-name-container">
+      <span id="current-song-name">No song selected</span>
+    </div>
+
+
+
+    <div class="controls">
+      <button id="prev-btn"><i class="fas fa-backward"></i></button>
+      <button id="play-pause-btn"><i class="fas fa-play"></i></button>
+      <button id="next-btn"><i class="fas fa-forward"></i></button>
+      <button id="repeat-btn" title="Repeat Song"><i class="fas fa-sync-alt"></i></button>
+      <button id="repeat-folder-btn" title="Repeat Folder"><i class="fas fa-redo-alt"></i></button>
+      <button id="no-repeat-btn" title="No Repeat"><i class="fas fa-ban"></i></button>
+
+          <!-- Volume controls -->
+    <div class="volume-controls">
+      <button id="volume-decrease-btn"><i class="fas fa-volume-up"></i></button>
+      <div id="volume-container" style="display: none;">
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+      </div>
+    </div>
+    </div>
+
+    <div class="playlist-container">
+      <h2>Playlist</h2>
+      <div class="playlist">
+        <ul id="playlist"></ul>
+      </div>
+      <div class="pagination">
+        <button id="prev-page-btn" disabled>Previous</button>
+        <button id="next-page-btn" disabled>Next</button>
+      </div>
+    </div>
+
+    <div id="error-message" style="display:none; color: red;"></div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsmediatags/dist/jsmediatags.min.js"></script>
+</body>
+</html>
